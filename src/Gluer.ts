@@ -53,7 +53,7 @@ class Gluer {
       !(i % 10) && await unblockEventLoop(); // unblock event loop every 10 iterations
       const chunk = this.chunks.get(i);
       const offset = i*chunkContentSize;
-      uint8Array.set(chunk.contentByteArray, offset);
+      uint8Array.set(new Uint8Array(chunk.contentByteArray), offset);
     }
 
     return uint8Array;
